@@ -77,10 +77,17 @@ const downloadResource = async (req, res, next) => {
     // Refresh user's updated credits
     const updatedUser = await User.findById(req.user._id);
 
+    // Generate absolute file URL for cross-origin client downloads
+    let resolvedFileUrl = resource.fileUrl;
+    if (resolvedFileUrl && resolvedFileUrl.startsWith('/')) {
+      const serverOrigin = process.env.SERVER_URL || `${req.protocol}://${req.get('host')}`;
+      resolvedFileUrl = `${serverOrigin}${resolvedFileUrl}`;
+    }
+
     res.status(200).json({
       success: true,
       message: 'Download initiated successfully',
-      fileUrl: resource.fileUrl,
+      fileUrl: resolvedFileUrl,
       fileName: resource.originalFileName || `${resource.title}.pdf`,
       currentCredits: updatedUser.credits,
       downloadsCount: resource.downloads
