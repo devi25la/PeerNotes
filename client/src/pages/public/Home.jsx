@@ -67,29 +67,29 @@ const Home = () => {
   return (
     <div className="space-y-16 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-indigo-900 via-indigo-950 to-slate-900 text-white pt-20 pb-28 px-4 sm:px-6 lg:px-8">
-        {/* Subtle background glow circles */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 right-10 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden pt-12 pb-24 px-4 sm:px-6 lg:px-8">
+        {/* Subtle decorative atmosphere glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 right-10 w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+        <div className="max-w-5xl mx-auto text-center relative z-10 space-y-7">
           {/* Announcement Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold text-indigo-200 backdrop-blur-md animate-in fade-in slide-in-from-top-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-indigo-200/80 text-xs font-bold text-indigo-900 backdrop-blur-md shadow-xs animate-in fade-in slide-in-from-top-3">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>Join 10,000+ university students sharing verified notes</span>
-            <span className="hidden sm:inline text-white/40">|</span>
-            <span className="text-amber-300 hidden sm:inline font-bold">+50 Free Starter Credits</span>
+            <span className="hidden sm:inline text-slate-300">|</span>
+            <span className="text-indigo-600 hidden sm:inline font-black">+50 Free Starter Credits</span>
           </div>
 
           {/* Heading */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-tight">
               Share Knowledge. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-sky-300 to-emerald-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600">
                 Learn Together.
               </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
               Discover notes, study materials, previous papers, lab manuals and resources shared by students.
             </p>
           </div>
@@ -97,7 +97,7 @@ const Home = () => {
           {/* Instant Search Bar */}
           <form
             onSubmit={handleSearchSubmit}
-            className="max-w-2xl mx-auto relative flex items-center p-2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20"
+            className="max-w-2xl mx-auto relative flex items-center p-2 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-indigo-900/5 border border-slate-200/90"
           >
             <Search className="w-5 h-5 text-slate-400 absolute left-5 pointer-events-none" />
             <input
@@ -105,11 +105,11 @@ const Home = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by topic, course (DBMS, OS, DSA), subject or college..."
-              className="w-full pl-12 pr-28 sm:pr-32 py-3.5 text-sm text-slate-900 placeholder-slate-400 rounded-xl focus:outline-hidden font-medium"
+              className="w-full pl-12 pr-28 sm:pr-32 py-3.5 text-sm text-slate-900 placeholder-slate-400 rounded-xl focus:outline-hidden font-medium bg-transparent"
             />
             <button
               type="submit"
-              className="absolute right-3 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-md active:scale-95"
+              className="absolute right-3 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-indigo-600/20 active:scale-95"
             >
               Search
             </button>
@@ -119,30 +119,30 @@ const Home = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               to="/browse"
-              className="px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition-all shadow-lg shadow-indigo-600/30 active:scale-95 flex items-center gap-2"
+              className="px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition-all shadow-lg shadow-indigo-600/25 active:scale-95 flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4" />
               Explore Resources
             </Link>
             <Link
               to="/upload"
-              className="px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-sm transition-all backdrop-blur-md active:scale-95 flex items-center gap-2"
+              className="px-6 py-3.5 rounded-2xl bg-white/90 hover:bg-white text-indigo-700 border border-indigo-200/80 font-bold text-sm transition-all backdrop-blur-md shadow-xs active:scale-95 flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-amber-300" />
+              <Sparkles className="w-4 h-4 text-amber-500" />
               Share Your Knowledge (+10)
             </Link>
           </div>
 
           {/* Popular Tag Pills */}
-          <div className="pt-2 flex items-center justify-center gap-2 flex-wrap text-xs text-slate-400">
-            <span className="font-semibold text-slate-300">Popular:</span>
+          <div className="pt-2 flex items-center justify-center gap-2 flex-wrap text-xs text-slate-500">
+            <span className="font-bold text-slate-700">Popular:</span>
             {['DBMS', 'Operating Systems', 'Data Structures', 'Machine Learning', 'Computer Networks', 'PYQ 2024'].map(
               (tag) => (
                 <button
                   key={tag}
                   type="button"
                   onClick={() => navigate(`/browse?search=${encodeURIComponent(tag)}`)}
-                  className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 text-slate-300 transition-colors"
+                  className="px-2.5 py-1 rounded-lg bg-white/80 hover:bg-white border border-slate-200/80 text-slate-700 font-medium shadow-2xs hover:border-indigo-300 transition-colors"
                 >
                   {tag}
                 </button>
@@ -154,8 +154,8 @@ const Home = () => {
       </section>
 
       {/* 2. PLATFORM STATISTICS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-lg shadow-indigo-900/5">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
               <BookOpen className="w-6 h-6" />
@@ -285,78 +285,78 @@ const Home = () => {
       </section>
 
       {/* 5. HOW IT WORKS / CREDIT SYSTEM */}
-      <section id="how-it-works" className="bg-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-lg shadow-indigo-900/5 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
-              <Coins className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold uppercase tracking-wider">
+              <Coins className="w-3.5 h-3.5 text-amber-500" />
               <span>Peer-to-Peer Economics</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
               How the Student Credit System Works
             </h2>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed font-medium">
               PeerNotes runs on a fair peer-contribution system. Quality notes are rewarded with credits that unlock access across university subjects.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Step 1 */}
-            <div className="bg-slate-800/80 rounded-3xl p-6 border border-slate-700/80 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-black text-xl">
+            <div className="bg-slate-50/90 rounded-3xl p-6 border border-slate-200/80 space-y-4 hover:bg-white hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-xl shadow-xs">
                 1
               </div>
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase">
+              <div className="flex items-center gap-2 text-emerald-600 text-xs font-bold uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>+50 Credits</span>
               </div>
-              <h3 className="text-lg font-bold text-white">Sign Up & Get Starter Bonus</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="text-lg font-bold text-slate-900">Sign Up & Get Starter Bonus</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Create a student profile with your college and department to instantly receive 50 complimentary credits.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-slate-800/80 rounded-3xl p-6 border border-slate-700/80 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">
+            <div className="bg-slate-50/90 rounded-3xl p-6 border border-slate-200/80 space-y-4 hover:bg-white hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl shadow-xs">
                 2
               </div>
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase">
+              <div className="flex items-center gap-2 text-emerald-600 text-xs font-bold uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>+10 Credits</span>
               </div>
-              <h3 className="text-lg font-bold text-white">Upload Approved Notes</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="text-lg font-bold text-slate-900">Upload Approved Notes</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Share your handwritten lecture notes, solved papers, or lab manuals. Receive +10 credits on admin approval.
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-slate-800/80 rounded-3xl p-6 border border-slate-700/80 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">
+            <div className="bg-slate-50/90 rounded-3xl p-6 border border-slate-200/80 space-y-4 hover:bg-white hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-black text-xl shadow-xs">
                 3
               </div>
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase">
+              <div className="flex items-center gap-2 text-amber-700 text-xs font-bold uppercase">
                 <Award className="w-3.5 h-3.5" />
                 <span>+5 & +3 Milestones</span>
               </div>
-              <h3 className="text-lg font-bold text-white">Earn Popularity Milestones</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="text-lg font-bold text-slate-900">Earn Popularity Milestones</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Every 10 downloads on your notes awards you +5 bonus credits. 5 positive ratings awards +3 credits!
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="bg-slate-800/80 rounded-3xl p-6 border border-slate-700/80 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-black text-xl">
+            <div className="bg-slate-50/90 rounded-3xl p-6 border border-slate-200/80 space-y-4 hover:bg-white hover:shadow-md transition-all">
+              <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-black text-xl shadow-xs">
                 4
               </div>
-              <div className="flex items-center gap-2 text-rose-400 text-xs font-bold uppercase">
+              <div className="flex items-center gap-2 text-rose-600 text-xs font-bold uppercase">
                 <Download className="w-3.5 h-3.5" />
                 <span>-1 Credit</span>
               </div>
-              <h3 className="text-lg font-bold text-white">Download Academic Material</h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <h3 className="text-lg font-bold text-slate-900">Download Academic Material</h3>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Download any verified study material from peers across universities for only 1 credit per resource.
               </p>
             </div>
