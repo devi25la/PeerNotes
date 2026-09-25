@@ -4,8 +4,53 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans selection:bg-indigo-500 selection:text-white;
+    @apply text-slate-900 font-sans selection:bg-indigo-500 selection:text-white antialiased;
+    min-height: 100vh;
+    background-color: #f0f7ff;
   }
+}
+
+/* ==========================================================================
+   Educational Theme Background & Atmosphere
+   ========================================================================== */
+
+.educational-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -50;
+  pointer-events: none;
+  background-color: #eff6ff;
+  background-image: 
+    linear-gradient(
+      180deg,
+      rgba(240, 248, 255, 0.88) 0%,
+      rgba(235, 246, 255, 0.78) 35%,
+      rgba(238, 247, 255, 0.65) 65%,
+      rgba(245, 250, 255, 0.45) 100%
+    ),
+    url('/images/educational-bg.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.educational-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -40;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at top center,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(240, 248, 255, 0.2) 60%,
+    rgba(230, 242, 255, 0.1) 100%
+  );
 }
 
 /* Custom Scrollbar */
@@ -26,13 +71,13 @@
 
 /* Glassmorphism helpers */
 .glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .glass-dark {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
