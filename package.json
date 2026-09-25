@@ -4,6 +4,7 @@
   "description": "PeerNotes – Student Notes & Academic Resource Marketplace",
   "main": "server/server.js",
   "scripts": {
+    "start": "node server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",
     "server:dev": "cd server && npm run dev",
